@@ -1,0 +1,28 @@
+run:
+  timeout: 5m
+  tests: false
+
+linters:
+  disable-all: true
+  enable:
+    - govet
+    - errcheck
+    - staticcheck
+    - unused
+    - gosimple
+
+linters-settings:
+  errcheck:
+    # Don't flag deferred Close() or common fmt calls
+    ignore: "fmt:.*,io:Close,os:Close"
+
+issues:
+  exclude-rules:
+    # Ignore errors from deferred calls
+    - linters: [errcheck]
+      text: "defer"
+    # Ignore test files
+    - path: "_test.go"
+      linters: [errcheck, unused]
+  max-issues-per-linter: 20
+  max-same-issues: 5

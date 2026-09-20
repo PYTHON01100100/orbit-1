@@ -1,0 +1,47 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# Orbit .gitignore
+# ─────────────────────────────────────────────────────────────────────────────
+
+# Go build outputs
+dist/
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Test cache & coverage
+coverage.out
+coverage.html
+*.test
+
+# Go module cache
+vendor/
+
+# Orbit runtime files
+.orbit/
+orbit.yaml.local
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Logs
+*.log
+logs/
+
+# Secrets — never commit these
+*.pem
+*.key
+*.crt
+id_rsa
+id_ed25519
+known_hosts.orbit
+
+# OS files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
